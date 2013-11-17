@@ -6,6 +6,9 @@
   "directories": {
     "test": "test"
   },
+  "bin": {
+    "para": "bin/para"
+  },
   "dependencies": {
     "ejs": "~0.8.3",
     "marked": "~0.2.9"
