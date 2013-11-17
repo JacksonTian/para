@@ -15,11 +15,33 @@
   },
   "devDependencies": {
     "mocha": "*",
-    "should": "*"
+    "should": "*",
+    "blanket": "*",
+    "travis-cov": "*"
   },
   "scripts": {
-    "test": "./node_modules/.bin/mocha -R spec"
+    "test": "make test-all",
+    "blanket": {
+      "pattern": "para/lib",
+      "data-cover-flags": {
+        "debug": false
+      }
+    },
+    "travis-cov": {
+      "threshold": 98
+    }
   },
   "author": "Jackson Tian",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/JacksonTian/para.git"
+  },
+  "keywords": [
+    "Paralleling",
+    "Documentation"
+  ],
+  "bugs": {
+    "url": "https://github.com/JacksonTian/para/issues"
+  }
 }

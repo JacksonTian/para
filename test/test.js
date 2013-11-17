@@ -1,5 +1,5 @@
 var should = require('should');
-var utils = require('../utils');
+var utils = require('../lib/utils');
 var fs = require('fs');
 
 describe('utils.js', function () {
@@ -34,6 +34,36 @@ describe('utils.js', function () {
       "bar",
       "",
       "* one\n* two",
+      ""
+    ]);
+  });
+
+  it('combineH1', function () {
+    var fixture = fs.readFileSync(__dirname + '/fixtures/h1.md', 'utf8').split('\n');
+    utils.combineH1(fixture).should.eql([
+      "hehe\n========",
+      "haha",
+      ""
+    ]);
+  });
+
+  it('combine', function () {
+    var fixture = fs.readFileSync(__dirname + '/fixtures/all.md', 'utf8').split('\n');
+    utils.combine(fixture).should.eql([
+      "h1\n=====",
+      "foo",
+      "",
+      "- foo\n- bar",
+      "",
+      "bar",
+      "",
+      "* foo\n* bar",
+      "",
+      "bar",
+      "",
+      "1. foo\n2. foo",
+      "",
+      "```\nfoo\nbar\n```",
       ""
     ]);
   });
