@@ -17,16 +17,20 @@
     "mocha": "*",
     "should": "*",
     "blanket": "*",
-    "travis-cov": "*"
+    "travis-cov": "*",
+    "mocha-lcov-reporter": "*",
+    "coveralls": "*"
   },
-  "scripts": {
-    "test": "make test-all",
+  "config": {
     "blanket": {
       "pattern": "para/lib",
       "data-cover-flags": {
         "debug": false
       }
-    },
+    }
+  },
+  "scripts": {
+    "test": "make test-all",
     "travis-cov": {
       "threshold": 98
     }
